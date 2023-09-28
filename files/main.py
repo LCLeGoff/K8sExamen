@@ -7,13 +7,14 @@ import os
 server = FastAPI(title='User API')
 
 # creating a connection to the database
-mysql_url = 'mysql'
+# mysql_url = 'mysql'
+mysql_url = '10.43.11.51'
 mysql_user = os.getenv('user')
 mysql_password = os.getenv('password')
 database_name = 'Main'
 
 # recreating the URL connection
-connection_url = 'mysql://{user}:{password}@{url}/{database}'.format(
+connection_url = 'mysql://{user}:{password}@{url}:3306/{database}'.format(
     user=mysql_user,
     password=mysql_password,
     url=mysql_url,
@@ -41,6 +42,7 @@ async def get_status():
 
 @server.get('/users')
 async def get_users():
+    print('try user')
     with mysql_engine.connect() as connection:
         results = connection.execute('SELECT * FROM Users;')
 

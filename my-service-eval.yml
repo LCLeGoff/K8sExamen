@@ -12,3 +12,4 @@ spec:
   selector:
     app: sql
   type: ClusterIP
+  clusterIP: 10.43.11.51
