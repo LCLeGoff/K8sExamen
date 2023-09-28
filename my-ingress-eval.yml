@@ -1,0 +1,11 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: sql-api
+spec:
+  defaultBackend:
+    service:
+      name: sql-api
+      port:
+        number: 8000
+
