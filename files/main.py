@@ -8,7 +8,9 @@ server = FastAPI(title='User API')
 
 # creating a connection to the database
 # mysql_url = 'mysql'
-mysql_url = '10.43.11.51'
+# mysql_url = '10.43.11.51'
+# mysql_url = 'sql-api'
+mysql_url = 'localhost'
 mysql_user = os.getenv('user')
 mysql_password = os.getenv('password')
 database_name = 'Main'
