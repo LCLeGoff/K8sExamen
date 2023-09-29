@@ -21,7 +21,6 @@ spec:
           image: datascientest/mysql-k8s:1.0.0
           env:
             - name: MYSQL_ROOT_PASSWORD
-              # value: datascientest1234
               valueFrom:
                 secretKeyRef:
                   name: sql-api
@@ -29,12 +28,11 @@ spec:
             - name: MYSQL_DATABASE
               value: Main
         - name: fastapi
-          image: akinasorrow/fastapi:1.0.6
+          image: akinasorrow/fastapi:1.0.9
           ports:
             - containerPort: 8000
           env:
             - name: password
-              # value: datascientest1234
               valueFrom:
                 secretKeyRef:
                   name: sql-api
