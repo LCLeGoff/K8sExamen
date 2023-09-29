@@ -29,7 +29,7 @@ spec:
             - name: MYSQL_DATABASE
               value: Main
         - name: fastapi
-          image: akinasorrow/fastapi:1.0.4
+          image: akinasorrow/fastapi:1.0.6
           ports:
             - containerPort: 8000
           env:
